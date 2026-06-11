@@ -2,8 +2,8 @@ import useFetch from "../hooks/useFetch";
 import { fetchExperience } from "../api";
 
 const Experience = () => {
-  const { data: experience, loading } = useFetch(fetchExperience);
-
+  const { data: experience = [], loading } = useFetch(fetchExperience);
+  const experienceList = Array.isArray(experience) ? experience : [];
   return (
     <section id="experience" className="py-24 px-6 border-t border-slate-800">
       <div className="max-w-5xl mx-auto">
@@ -17,7 +17,7 @@ const Experience = () => {
           </div>
         ) : (
           <div className="space-y-0 divide-y divide-slate-800">
-            {experience.map((exp) => (
+           {experienceList.map((exp) => (
               <div
                 key={exp.id}
                 className="grid grid-cols-[100px_1fr] gap-6 py-8"
