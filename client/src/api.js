@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "/api",
+  baseURL: "https://portfolio-backend-05nr.onrender.com/api",
 });
 
 export const fetchProjects = () => API.get("/projects");
