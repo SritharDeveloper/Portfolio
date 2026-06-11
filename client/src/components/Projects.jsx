@@ -77,10 +77,15 @@ const ProjectCard = ({ project, featured }) => (
 );
 
 const Projects = () => {
-  const { data: projects, loading } = useFetch(fetchProjects);
+  const { data: projects = [], loading } = useFetch(fetchProjects);
 
-  const featured = projects.find((p) => p.featured);
-  const rest = projects.filter((p) => !p.featured);
+  const featured = Array.isArray(projects)
+  ? projects.find((p) => p.featured)
+  : null;
+
+const rest = Array.isArray(projects)
+  ? projects.filter((p) => !p.featured)
+  : [];
 
   return (
     <section id="projects" className="py-24 px-6 border-t border-slate-800">
