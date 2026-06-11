@@ -29,7 +29,6 @@ const cardVariants = {
 const Experience = () => {
   const { data: experience = [], loading } = useFetch(fetchExperience);
   const experienceList = Array.isArray(experience) ? experience : [];
-
   return (
     <section
       id="experience"
