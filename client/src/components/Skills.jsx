@@ -13,7 +13,9 @@ const SkillDots = ({ level }) => (
 );
 
 const Skills = () => {
-  const { data: skills, loading } = useFetch(fetchSkills);
+const { data: skills = [], loading } = useFetch(fetchSkills);
+
+const skillsList = Array.isArray(skills) ? skills : [];
 
   const categories = ["Frontend", "Backend", "Database"];
 
@@ -34,7 +36,7 @@ const Skills = () => {
         ) : (
           <div className="space-y-8">
             {categories.map((cat) => {
-              const catSkills = skills.filter((s) => s.category === cat);
+              const catSkills = skillsList.filter((s) => s.category === cat);
               if (!catSkills.length) return null;
               return (
                 <div key={cat}>
