@@ -22,8 +22,10 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 border-t border-slate-800">
-      <div className="max-w-5xl mx-auto">
+    <section
+      id="contact"
+      className="py-24 px-6 border-t border-slate-200"
+    >      <div className="max-w-5xl mx-auto">
         <p className="section-label">Contact</p>
 
         <div className="grid md:grid-cols-2 gap-12">
@@ -32,7 +34,7 @@ const Contact = () => {
             <h2 className="font-serif text-3xl font-medium mb-4">
               Let's build something.
             </h2>
-            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+            <p className="text-slate-600 text-sm leading-relaxed mb-8">
               Open to full-time roles and freelance projects. Drop me a message
               and I'll get back to you within a day.
             </p>
@@ -42,7 +44,7 @@ const Contact = () => {
                 href="https://github.com/SritharDeveloper?tab=repositories"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-3 text-sm text-slate-400 hover:text-white transition-colors"
+                className="flex items-center gap-3 text-sm text-slate-600 hover:text-blue-600 transition-colors"
               >
                 <Github size={16} /> github.com/SritharDeveloper
               </a>
@@ -50,7 +52,7 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/srithar-s-b64159302/"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-3 text-sm text-slate-400 hover:text-white transition-colors"
+                className="flex items-center gap-3 text-sm text-slate-600 hover:text-blue-600 transition-colors"
               >
                 <Linkedin size={16} /> linkedin.com/in/srithar-s-b64159302
               </a>

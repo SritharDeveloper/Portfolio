@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "/api",
+  baseURL: import.meta.env.PROD
+    ? "https://portfolio-backend-05nr.onrender.com/api"
+    : "http://localhost:5000/api",
 });
 
 export const fetchProjects = () => API.get("/projects");
