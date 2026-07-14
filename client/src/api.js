@@ -1,15 +1,31 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: 
-  // import.meta.env.PROD ?
-   "https://portfolio-backend-05nr.onrender.com/api"
-    // : "http://localhost:5000/api",
+  baseURL: "https://portfolio-backend-05nr.onrender.com/api",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  timeout: 30000,
 });
 
-export const fetchProjects = () => API.get("/projects");
-export const fetchSkills = () => API.get("/skills");
-export const fetchExperience = () => API.get("/experience");
-export const sendContact = (data) => API.post("/contact", data);
+export const fetchProjects = async () => {
+  const response = await API.get("/projects");
+  return response.data;
+};
+
+export const fetchSkills = async () => {
+  const response = await API.get("/skills");
+  return response.data;
+};
+
+export const fetchExperience = async () => {
+  const response = await API.get("/experience");
+  return response.data;
+};
+
+export const sendContact = async (data) => {
+  const response = await API.post("/contact", data);
+  return response.data;
+};
 
 export default API;
