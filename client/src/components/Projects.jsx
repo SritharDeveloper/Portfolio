@@ -115,7 +115,7 @@ const ProjectCard = ({ project, featured }) => (
         ))}
       </div>
 
-      <div className="flex gap-4 pt-2">
+      {/* <div className="flex gap-4 pt-2">
         {project.github_url && (
           <motion.a
             href={project.github_url}
@@ -161,7 +161,7 @@ const ProjectCard = ({ project, featured }) => (
             Live Demo
           </motion.a>
         )}
-      </div>
+      </div> */}
     </div>
   </motion.div>
 );
